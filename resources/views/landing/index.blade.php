@@ -28,7 +28,7 @@
                     <a href="#tentang" class="hover:text-green-600 transition">Tentang Kami</a>
                 </div>
                 <div>
-                    <a href="/login"
+                    <a href="{{ route('login') }}"
                         class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold transition shadow-lg shadow-green-200">
                         Masuk Sistem
                     </a>
@@ -51,9 +51,9 @@
                         terintegrasi. Lebih akurat, lebih produktif.
                     </p>
                     <div class="mt-10 flex space-x-4">
-                        <button
-                            class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 transition">Mulai
-                            Sekarang</button>
+                        <a href="{{ route('register') }}"
+                            class="bg-slate-900 text-white px-5 py-2 rounded-lg font-semibold transition shadow-lg">Mulai
+                            Sekarang</a>
                         <button
                             class="border border-slate-300 px-8 py-3 rounded-xl font-bold hover:bg-white transition">Pelajari
                             Fitur</button>

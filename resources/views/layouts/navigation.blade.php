@@ -8,6 +8,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('blocks.index')" :active="request()->routeIs('blocks.index')">
+                        {{ __('Data Block') }}
+                    </x-nav-link>
                 </div>
             </div>
 

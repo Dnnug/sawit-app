@@ -49,26 +49,41 @@ class BlockController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Ini Methode untuk Route menuju Halaman Update Data.
      */
     public function edit(string $id)
     {
-        //
+        $blocks = \App\Models\Block::findOrFail($id);
+        return view('blocks.edit', compact('block'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Ini Methode untuk mengedit/mengupdate lalu menyimpan,validasi data.
      */
     public function update(Request $request, string $id)
     {
-        //
+        $blocks = \App\Models\Block::findOrFail($id);
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'area' => 'required|numeric|min:0.1',
+            'year_planted' => 'required|integer|min:1900|max:' . date('Y'),
+            'tree_count' => 'nullable|integer|min:0',
+            'description' => 'nullable|string',
+        ]);
+
+        $blocks->update($validated);
+        return redirect()->route('blocks.index')->with('success', 'Data Berhasil di Update');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Ini Methode untuk Menghapus data.
      */
     public function destroy(string $id)
     {
-        //
+        $blocks = \App\Models\Block::findOrFail($id);
+        $blocks->delete();
+
+        return redirect()->route('blocks.index')->with('success', 'Data Berhasil di Hapus');
     }
 }

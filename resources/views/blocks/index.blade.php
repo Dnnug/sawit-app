@@ -10,6 +10,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-sm sm:rounded-xl p-6">
+                @if (session('success'))
+                    <div class="mb-4 p-4 bg-green-100 border-l-4 border-green-500 text-green-700">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <table class="w-full text-left border-collapse">
                     <thead>
                         <tr class="border-b border-slate-200">
@@ -28,6 +33,14 @@
                                 <td class="py-3 px-4">
                                     <a href="{{ route('blocks.edit', $block->id) }}"
                                         class="text-blue-600 hover:underline">Edit</a>
+                                    <form action="{{ route('blocks.destroy', $block->id) }}" method="POST"
+                                        onsubmit="return confirm('Apakah Anda yakin ingin menghapus blok ini? Semua data terkait mungkin akan hilang.')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-600 hover:text-red-800 font-medium">
+                                            Hapus
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

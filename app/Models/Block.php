@@ -13,4 +13,9 @@ class Block extends Model
         'tree_count',
         'description'
     ];
+
+    public function harvests()
+    {
+        return $this->hasMany(Harvest::class);
+    }
 }

@@ -54,7 +54,7 @@ class BlockController extends Controller
     public function edit(string $id)
     {
         $blocks = \App\Models\Block::findOrFail($id);
-        return view('blocks.edit', compact('block'));
+        return view('blocks.edit', compact('blocks'));
     }
 
     /**

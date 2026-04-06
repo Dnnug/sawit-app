@@ -21,6 +21,7 @@
                             <th class="py-3 px-4">Nama Blok</th>
                             <th class="py-3 px-4">Luas (Ha)</th>
                             <th class="py-3 px-4">Tahun Tanam</th>
+                            <th class="py-3 px-4">Deskripsi</th>
                             <th class="py-3 px-4">Aksi</th>
                         </tr>
                     </thead>
@@ -30,6 +31,7 @@
                                 <td class="py-3 px-4 font-medium">{{ $block->name }}</td>
                                 <td class="py-3 px-4">{{ $block->area }} Ha</td>
                                 <td class="py-3 px-4">{{ $block->year_planted }}</td>
+                                <td class="py-3 px-4">{{ $block->description }}</td>
                                 <td class="py-3 px-4">
                                     <a href="{{ route('blocks.edit', $block->id) }}"
                                         class="text-blue-600 hover:underline">Edit</a>

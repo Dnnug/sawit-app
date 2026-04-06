@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\BlockController;
+use App\Http\Controllers\HarvestController;
 use Illuminate\Support\Facades\Route;
 /* INi Route Landing Page */
 
@@ -23,5 +24,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('blocks', BlockController::class);
 });
+
+/** Route CRUD Harvests */
+Route::resource('harvests', HarvestController::class)->middleware('auth');
 
 require __DIR__ . '/auth.php';

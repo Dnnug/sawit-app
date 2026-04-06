@@ -11,6 +11,9 @@
                     <x-nav-link :href="route('blocks.index')" :active="request()->routeIs('blocks.index')">
                         {{ __('Data Block') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('harvests.index')" :active="request()->routeIs('harvests.index')">
+                        {{ __('Data Panen') }}
+                    </x-nav-link>
                 </div>
             </div>
 

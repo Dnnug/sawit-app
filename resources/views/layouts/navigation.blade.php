@@ -14,6 +14,9 @@
                     <x-nav-link :href="route('harvests.index')" :active="request()->routeIs('harvests.index')">
                         {{ __('Data Panen') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('expenses.index')" :active="request()->routeIs('expenses.index')">
+                        {{ __('Data Pengeluaran') }}
+                    </x-nav-link>
                 </div>
             </div>
 

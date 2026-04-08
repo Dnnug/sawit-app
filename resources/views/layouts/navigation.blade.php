@@ -17,6 +17,9 @@
                     <x-nav-link :href="route('expenses.index')" :active="request()->routeIs('expenses.index')">
                         {{ __('Data Pengeluaran') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('prices.index')" :active="request()->routeIs('prices.index')">
+                        {{ __('Harga TBS') }}
+                    </x-nav-link>
                 </div>
             </div>
 
